@@ -1,0 +1,38 @@
+name: Generate Contribution Ripple
+
+on:
+  schedule:
+    # Runs daily at 2:00 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    # Allows manual trigger from the Actions tab
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate ripple SVG
+        env:
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT_DIR: ./dist
+        run: node scripts/generate-ripple.js
+
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

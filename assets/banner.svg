@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 220">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="40%" stop-color="#16213e"/>
+      <stop offset="70%" stop-color="#0f3460"/>
+      <stop offset="100%" stop-color="#1a0a2e"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c9a0dc"/>
+      <stop offset="50%" stop-color="#e91e90"/>
+      <stop offset="100%" stop-color="#39c5bb"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9b59b6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#9b59b6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e91e90" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#e91e90" stop-opacity="0"/>
+    </radialGradient>
+
+    <style>
+      .star { animation: twinkle var(--d, 3s) ease-in-out infinite; animation-delay: var(--dl, 0s); }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.1; }
+        50% { opacity: var(--mo, 0.8); }
+      }
+
+      .title-text {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 38px;
+        font-weight: 700;
+        fill: url(#titleGrad);
+      }
+
+      .subtitle-text {
+        font-family: monospace;
+        font-size: 13px;
+        fill: #c9a0dccc;
+        letter-spacing: 2px;
+      }
+
+      .cursor { animation: blink 1s step-end infinite; }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      .particle { animation: floatUp var(--d, 6s) ease-in infinite; animation-delay: var(--dl, 0s); }
+      @keyframes floatUp {
+        0% { opacity: 0; transform: translateY(0) scale(0.3); }
+        15% { opacity: var(--mo, 0.4); }
+        100% { opacity: 0; transform: translateY(-160px) scale(0.8); }
+      }
+
+      .building-window { animation: windowGlow 4s ease-in-out infinite alternate; animation-delay: var(--dl, 0s); }
+      @keyframes windowGlow {
+        0% { opacity: 0.15; }
+        50% { opacity: 0.5; }
+        100% { opacity: 0.2; }
+      }
+
+      .ambient1 { animation: ambientDrift 8s ease-in-out infinite; }
+      @keyframes ambientDrift {
+        0%, 100% { opacity: 0.3; transform: translate(0, 0); }
+        50% { opacity: 0.5; transform: translate(20px, -10px); }
+      }
+
+      .ambient2 { animation: ambientDrift2 10s ease-in-out infinite; }
+      @keyframes ambientDrift2 {
+        0%, 100% { opacity: 0.2; transform: translate(0, 0); }
+        50% { opacity: 0.4; transform: translate(-15px, 8px); }
+      }
+
+      .title-glow { animation: titlePulse 4s ease-in-out infinite; }
+      @keyframes titlePulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="840" height="220" fill="url(#sky)"/>
+
+  <!-- Ambient glow -->
+  <ellipse class="ambient1" cx="250" cy="90" rx="200" ry="100" fill="url(#glow1)"/>
+  <ellipse class="ambient2" cx="620" cy="110" rx="180" ry="90" fill="url(#glow2)"/>
+
+  <!-- Stars -->
+  <circle class="star" cx="45" cy="25" r="1" fill="white" style="--d:3.2s;--dl:0.5s;--mo:0.7"/>
+  <circle class="star" cx="120" cy="55" r="0.8" fill="white" style="--d:4.1s;--dl:1.2s;--mo:0.5"/>
+  <circle class="star" cx="200" cy="18" r="1.2" fill="white" style="--d:2.8s;--dl:0.8s;--mo:0.9"/>
+  <circle class="star" cx="280" cy="42" r="0.7" fill="white" style="--d:3.6s;--dl:2.1s;--mo:0.6"/>
+  <circle class="star" cx="340" cy="12" r="1" fill="white" style="--d:4.5s;--dl:0.3s;--mo:0.8"/>
+  <circle class="star" cx="410" cy="58" r="0.9" fill="white" style="--d:3.0s;--dl:1.8s;--mo:0.5"/>
+  <circle class="star" cx="470" cy="22" r="1.1" fill="white" style="--d:3.8s;--dl:0.7s;--mo:0.7"/>
+  <circle class="star" cx="530" cy="48" r="0.6" fill="white" style="--d:4.3s;--dl:2.5s;--mo:0.4"/>
+  <circle class="star" cx="590" cy="15" r="1.3" fill="white" style="--d:2.5s;--dl:1.0s;--mo:0.9"/>
+  <circle class="star" cx="650" cy="35" r="0.8" fill="white" style="--d:3.4s;--dl:1.5s;--mo:0.6"/>
+  <circle class="star" cx="710" cy="52" r="1" fill="white" style="--d:4.0s;--dl:0.2s;--mo:0.7"/>
+  <circle class="star" cx="770" cy="20" r="0.7" fill="white" style="--d:3.1s;--dl:2.3s;--mo:0.5"/>
+  <circle class="star" cx="800" cy="60" r="0.9" fill="white" style="--d:3.7s;--dl:0.9s;--mo:0.8"/>
+  <circle class="star" cx="80" cy="70" r="0.6" fill="white" style="--d:4.2s;--dl:1.6s;--mo:0.4"/>
+  <circle class="star" cx="160" cy="80" r="1" fill="white" style="--d:2.9s;--dl:2.0s;--mo:0.6"/>
+  <circle class="star" cx="310" cy="75" r="0.8" fill="white" style="--d:3.5s;--dl:0.4s;--mo:0.7"/>
+  <circle class="star" cx="500" cy="68" r="1.1" fill="white" style="--d:4.4s;--dl:1.3s;--mo:0.5"/>
+  <circle class="star" cx="680" cy="72" r="0.7" fill="white" style="--d:3.3s;--dl:2.2s;--mo:0.6"/>
+  <circle class="star" cx="55" cy="100" r="0.5" fill="white" style="--d:5.0s;--dl:0.6s;--mo:0.3"/>
+  <circle class="star" cx="750" cy="85" r="0.6" fill="white" style="--d:4.8s;--dl:1.9s;--mo:0.4"/>
+
+  <!-- Cityscape silhouette -->
+  <g opacity="0.85">
+    <rect x="20" y="170" width="35" height="50" rx="1" fill="#0d1117"/>
+    <rect x="62" y="155" width="28" height="65" rx="1" fill="#0d1117"/>
+    <rect x="96" y="175" width="40" height="45" rx="1" fill="#0d1117"/>
+    <rect x="142" y="160" width="22" height="60" rx="1" fill="#0d1117"/>
+    <rect x="170" y="148" width="45" height="72" rx="1" fill="#0d1117"/>
+    <rect x="222" y="168" width="30" height="52" rx="1" fill="#0d1117"/>
+    <rect x="258" y="155" width="38" height="65" rx="1" fill="#0d1117"/>
+    <rect x="302" y="172" width="25" height="48" rx="1" fill="#0d1117"/>
+    <rect x="334" y="145" width="50" height="75" rx="1" fill="#0d1117"/>
+    <rect x="390" y="165" width="32" height="55" rx="1" fill="#0d1117"/>
+    <rect x="428" y="158" width="28" height="62" rx="1" fill="#0d1117"/>
+    <rect x="462" y="170" width="42" height="50" rx="1" fill="#0d1117"/>
+    <rect x="510" y="150" width="35" height="70" rx="1" fill="#0d1117"/>
+    <rect x="552" y="168" width="26" height="52" rx="1" fill="#0d1117"/>
+    <rect x="584" y="155" width="44" height="65" rx="1" fill="#0d1117"/>
+    <rect x="634" y="172" width="30" height="48" rx="1" fill="#0d1117"/>
+    <rect x="670" y="148" width="38" height="72" rx="1" fill="#0d1117"/>
+    <rect x="714" y="165" width="28" height="55" rx="1" fill="#0d1117"/>
+    <rect x="748" y="158" width="45" height="62" rx="1" fill="#0d1117"/>
+    <rect x="800" y="170" width="40" height="50" rx="1" fill="#0d1117"/>
+  </g>
+
+  <!-- Building windows -->
+  <g>
+    <rect class="building-window" x="30" y="178" width="3" height="3" rx="0.5" fill="#9b59b6" style="--dl:0s" opacity="0.3"/>
+    <rect class="building-window" x="38" y="185" width="3" height="3" rx="0.5" fill="#39c5bb" style="--dl:1.2s" opacity="0.3"/>
+    <rect class="building-window" x="70" y="162" width="3" height="3" rx="0.5" fill="#9b59b6" style="--dl:0.5s" opacity="0.3"/>
+    <rect class="building-window" x="78" y="172" width="3" height="3" rx="0.5" fill="#e91e90" style="--dl:2.0s" opacity="0.3"/>
+    <rect class="building-window" x="180" y="155" width="3" height="3" rx="0.5" fill="#39c5bb" style="--dl:0.8s" opacity="0.3"/>
+    <rect class="building-window" x="190" y="165" width="3" height="3" rx="0.5" fill="#9b59b6" style="--dl:1.5s" opacity="0.3"/>
+    <rect class="building-window" x="345" y="152" width="3" height="3" rx="0.5" fill="#e91e90" style="--dl:0.3s" opacity="0.3"/>
+    <rect class="building-window" x="360" y="162" width="3" height="3" rx="0.5" fill="#39c5bb" style="--dl:1.8s" opacity="0.3"/>
+    <rect class="building-window" x="520" y="158" width="3" height="3" rx="0.5" fill="#9b59b6" style="--dl:0.7s" opacity="0.3"/>
+    <rect class="building-window" x="530" y="168" width="3" height="3" rx="0.5" fill="#e91e90" style="--dl:2.3s" opacity="0.3"/>
+    <rect class="building-window" x="595" y="162" width="3" height="3" rx="0.5" fill="#39c5bb" style="--dl:1.0s" opacity="0.3"/>
+    <rect class="building-window" x="680" y="155" width="3" height="3" rx="0.5" fill="#9b59b6" style="--dl:1.7s" opacity="0.3"/>
+    <rect class="building-window" x="690" y="165" width="3" height="3" rx="0.5" fill="#e91e90" style="--dl:0.4s" opacity="0.3"/>
+    <rect class="building-window" x="760" y="165" width="3" height="3" rx="0.5" fill="#39c5bb" style="--dl:2.1s" opacity="0.3"/>
+  </g>
+
+  <!-- Floating particles -->
+  <circle class="particle" cx="150" cy="200" r="2" fill="#9b59b6" opacity="0.6" style="--d:7s;--dl:0s;--mo:0.35"/>
+  <circle class="particle" cx="320" cy="195" r="1.5" fill="#e91e90" opacity="0.5" style="--d:8s;--dl:2s;--mo:0.3"/>
+  <circle class="particle" cx="480" cy="200" r="2.5" fill="#39c5bb" opacity="0.5" style="--d:6.5s;--dl:4s;--mo:0.4"/>
+  <circle class="particle" cx="620" cy="198" r="1.8" fill="#c86dd7" opacity="0.5" style="--d:9s;--dl:1s;--mo:0.3"/>
+  <circle class="particle" cx="250" cy="200" r="1.2" fill="#39c5bb" opacity="0.4" style="--d:7.5s;--dl:3.5s;--mo:0.25"/>
+  <circle class="particle" cx="700" cy="195" r="2" fill="#9b59b6" opacity="0.5" style="--d:8.5s;--dl:5s;--mo:0.3"/>
+  <circle class="particle" cx="100" cy="198" r="1.5" fill="#e91e90" opacity="0.4" style="--d:6s;--dl:1.5s;--mo:0.35"/>
+  <circle class="particle" cx="550" cy="200" r="1.8" fill="#c86dd7" opacity="0.4" style="--d:7.8s;--dl:3s;--mo:0.3"/>
+
+  <!-- Title glow behind text -->
+  <ellipse class="title-glow" cx="420" cy="88" rx="160" ry="30" fill="#9b59b6" opacity="0.15"/>
+
+  <!-- Title -->
+  <text class="title-text" x="420" y="95" text-anchor="middle">desuqcafe</text>
+
+  <!-- Subtitle -->
+  <text class="subtitle-text" x="420" y="120" text-anchor="middle">
+    ~ 🐕 ~<tspan class="cursor" fill="#39c5bb">|</tspan>
+  </text>
+</svg>
