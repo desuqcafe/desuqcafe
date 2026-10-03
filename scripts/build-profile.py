@@ -68,7 +68,7 @@ def font_css(svg_body):
         opts.name_IDs = []
         opts.notdef_outline = False
         sub = subset.Subsetter(opts)
-        font = TTFont(os.path.join(HERE, "fonts", file))
+        font = TTFont(os.path.join(HERE, "fonts", file), recalcTimestamp=False)  # same bytes on every build
         sub.populate(text="".join(chars).replace("&amp;", "&"))
         sub.subset(font)
         buf = io.BytesIO()
@@ -235,6 +235,10 @@ EMBLEMS = {
     "fish": '<path d="M-16 0 C-8 -12 8 -12 14 0 C8 12 -8 12 -16 0 Z"/><path d="M-16 0 L-22 -7 V7 Z"/>'
             '<circle cx="7" cy="-2" r="1.5" fill="#ece6f4"/><path d="M-2 -6 Q1 0 -2 6"/>'
             '<path d="M0 -20 V-14 M0 14 V20 M-8 -20 H8 M-8 20 H8" stroke-opacity=".6"/>',
+    # two arrows chasing round a circle: Syncthing
+    "sync": '<path d="M-17 -4 A18 18 0 0 1 13 -13"/><path d="M14 -21 L13 -13 L5 -14"/>'
+            '<path d="M17 4 A18 18 0 0 1 -13 13"/><path d="M-14 21 L-13 13 L-5 14"/>'
+            '<circle cx="0" cy="0" r="3" fill="#ece6f4"/>',
     # a shield: Data Guardian
     "shield": '<path d="M0 -21 L16 -14 V0 C16 10 8 17 0 21 C-8 17 -16 10 -16 0 V-14 Z"/><path d="M-7 0 L-2 6 L8 -6"/>',
 }
@@ -492,12 +496,12 @@ CARDS = [
     dict(id_="loom", title="Loom", status="Private · release candidate", open_source=False,
          desc="A live link from Blender to Unity and Unreal. Move a vertex, a light or an animation and the engine's viewport follows in milliseconds.",
          tags=["Blender", "Unity", "Unreal", "C++", "Python"], emblem="link", accent=MOON, points=6, runes="Loom · Blender to engine", seed=13),
-    dict(id_="navigator", title="Component Navigator", status="Private", open_source=False,
+    dict(id_="navigator", title="Component Navigator", status="Private · release candidate", open_source=False,
          desc="A full Inspector replacement for Unity that sorts and groups your components for you, so you stop scrolling and start building.",
          tags=["Unity", "C#", "UI Toolkit"], emblem="panels", accent=GOLD, points=8, runes="Component Navigator", seed=14),
-    dict(id_="fishysteamworks", title="FishySteamworks", status="Open source · fork", open_source=True,
-         desc="FishNet's Steamworks transport with its memory leaks and timeouts fixed, async cancellation, and Steam ID helpers.",
-         tags=["Unity", "C#", "FishNet", "Steamworks"], emblem="fish", accent=MOON, points=6, runes="FishySteamworks", seed=15),
+    dict(id_="syncthing", title="desuqcafe Syncthing", status="Open source · fork", open_source=True,
+         desc="Syncthing as a one-click Windows install: no admin prompt, a tray app, telemetry compiled out, and set up for big Blender files.",
+         tags=["Go", "Windows", "Installer"], emblem="sync", accent=AMETHYST, points=7, runes="Syncthing · one click", seed=15),
     dict(id_="dataguardian", title="Data Guardian", status="Open source", open_source=True,
          desc="A Blender add-on that stops your data being silently purged, with fake-user protection on save and creation for 20+ data types.",
          tags=["Blender", "Python"], emblem="shield", accent=CRIMSON, points=5, runes="Data Guardian", seed=16),

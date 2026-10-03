@@ -50,7 +50,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/desuqcafe/InhyeongFishySteamworks"><img src="./assets/card-fishysteamworks.svg" alt="FishySteamworks" width="49%"></a>
+  <a href="https://github.com/desuqcafe/desuqcafe-syncthing"><img src="./assets/card-syncthing.svg" alt="desuqcafe Syncthing" width="49%"></a>
   <a href="https://github.com/desuqcafe/blender-fake-user-manager-"><img src="./assets/card-dataguardian.svg" alt="Data Guardian" width="49%"></a>
 </p>
 
